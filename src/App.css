@@ -1,0 +1,63 @@
+@keyframes morph {
+  0% {
+    transform: scale(1);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    transform: scale(1.1);
+    border-radius: 40% 60% 70% 30%/30% 70% 40% 60%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
+
+.animated-image {
+  animation: morph 8s ease-in-out infinite;
+  background-image: url(/static/media/pfp_webp.f334283….webp);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 3px solid #262626;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  height: 23rem;
+  position: relative;
+  transition: all 1s ease-in-out;
+  width: 26rem;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animated-hand {
+  animation: wave 1s ease-in-out infinite;
+}
+
+
+.contact__icon-box span {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  color: #147efb;
+  display: flex;
+  height: 5rem;
+  justify-content: center;
+  width: 5rem;
+}
