@@ -12,11 +12,11 @@ export default function HeroSection() {
           <div className="hero-main w-full md:pt-40 pb-0 flex md:flex-row flex-col-reverse items-center justify-between">
             <div className="hero-text md:w-2/5">
               <h1 className="text-4xl mt-5 text-center md:text-left md:text-7xl text-black font-bold">
-                Front-End React <span className="flex justify-center md:justify-start"> Developer{" "}
+                Software  <span className="flex justify-center md:justify-start"> Developer{" "}
                 <img src={handsImage} className="w-10 md:w-14 animated-hand" alt="" /></span>
               </h1>
               <p className="font-medium text-slate-500 my-4">
-              Hello!!, I'm David Ajanaku, a dedicated Front-end React Developer situated in Lagos, Nigeria. 📍
+              Hello!!, I'm David Ajanaku, a dedicated Software  Developer situated in Lagos, Nigeria. 📍
               </p>
               <span className="flex justify-center md:justify-start">
                 <Link to="http://www.linkedin.com/in/ajanaku-david-45375424b" target="_blank">
@@ -69,7 +69,7 @@ export default function HeroSection() {
                   <img src="https://skillicons.dev/icons?i=html,css" alt="" />
                 </li>
                 <li>
-                  <img src="https://skillicons.dev/icons?i=js" alt="" />
+                  <img src="https://skillicons.dev/icons?i=js,ts" alt="" />
                 </li>
                 <li>
                   <img src="https://skillicons.dev/icons?i=react" alt="" />
@@ -83,6 +83,7 @@ export default function HeroSection() {
                   <img src="https://skillicons.dev/icons?i=flutter," alt="" />
 
                 </li>
+                
                 
               </ul>
             </div>

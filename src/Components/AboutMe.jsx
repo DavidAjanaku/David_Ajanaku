@@ -18,7 +18,7 @@ export default function AboutMe() {
                 About Me
               </h3>
               <h4 className="font-bold text-2xl md:text-2xl my-4">
-                A Dedicated Front-end Developer <br /> Based in Lagos, Nigeria
+                A Dedicated Software Developer <br /> Based in Lagos, Nigeria
                 📍
               </h4>
               <p className="text-slate-500">
