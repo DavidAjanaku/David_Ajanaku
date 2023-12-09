@@ -64,7 +64,7 @@ export default function HeroSection() {
           <div className="hero-skills  items-center space-y-3 my-20 pb-10">
             <p className="text-base font-bold">Tech Stack</p>
             <div className="logos">
-              <ul className="flex  items-center space-x-5">
+              <ul className="flex  items-center space-x-3">
                 <li>
                   <img src="https://skillicons.dev/icons?i=html,css" alt="" />
                 </li>
@@ -72,7 +72,7 @@ export default function HeroSection() {
                   <img src="https://skillicons.dev/icons?i=js,ts" alt="" />
                 </li>
                 <li>
-                  <img src="https://skillicons.dev/icons?i=react" alt="" />
+                  <img src="https://skillicons.dev/icons?i=react,next" alt="" />
 
                 </li>
                 <li>
@@ -80,10 +80,16 @@ export default function HeroSection() {
 
                 </li>
                 <li>
-                  <img src="https://skillicons.dev/icons?i=flutter," alt="" />
+                  <img src="https://skillicons.dev/icons?i=flutter" alt="" />
 
                 </li>
-                
+                <li>
+            <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js Icon" />
+        </li>
+
+        <li>
+            <img src="https://skillicons.dev/icons?i=xd" alt="Node.js Icon" />
+        </li>
                 
               </ul>
             </div>
