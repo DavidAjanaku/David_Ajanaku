@@ -5,6 +5,7 @@ import AboutMe from './Components/AboutMe'
 import Portfolio from './Components/Portfolio'
 import Footer from './Components/Footer'
 import Hamburger from './Components/Hamburger'
+import Articles from './Components/Article'
 
 export default function Home() {
   return (
@@ -18,7 +19,10 @@ export default function Home() {
        <section className='pt-56 bg-slate-100'>
        <HeroSection/>
        <AboutMe/>
+     
+
        <Portfolio/>
+       <Articles/>
        </section>
        <Footer/>
     </div>

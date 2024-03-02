@@ -37,6 +37,17 @@ export default function Header() {
           </li>
           <li className="cursor-pointer">
             <ScrollLink
+              to="article-section"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Article
+            </ScrollLink>
+          </li>
+          <li className="cursor-pointer">
+            <ScrollLink
               to="portfolio-section"
               spy={true}
               smooth={true}

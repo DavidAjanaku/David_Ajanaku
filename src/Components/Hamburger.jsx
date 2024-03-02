@@ -60,6 +60,17 @@ const Hamburger = () => {
               About
             </ScrollLink>
           </li>
+          <li className="cursor-pointer">
+            <ScrollLink
+              to="article-section"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              Article
+            </ScrollLink>
+          </li>
           <li className="mb-2">
             <ScrollLink
               to="portfolio-section"

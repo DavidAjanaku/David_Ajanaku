@@ -11,13 +11,15 @@ export default function HeroSection() {
         <div className="flex flex-col h-[100vh] md:h-[50vh] justify-center p-4 md:w-3/4  md:mx-auto ">
           <div className="hero-main w-full md:pt-40 pb-0 flex md:flex-row flex-col-reverse items-center justify-between">
             <div className="hero-text md:w-2/5">
-              <h1 className="text-4xl mt-5 text-center md:text-left md:text-7xl text-black font-bold">
-                Software  <span className="flex justify-center md:justify-start"> Developer{" "}
-                <img src={handsImage} className="w-10 md:w-14 animated-hand" alt="" /></span>
-              </h1>
-              <p className="font-medium text-slate-500 my-4">
-              Hello!!, I'm David Ajanaku, a dedicated Software  Developer situated in Lagos, Nigeria. 📍
-              </p>
+            <h1 className="text-4xl md:text-7xl font-bold mt-5 md:text-left text-center text-black">
+              Software Developer & Technical Writer{" "}
+              <span className="flex justify-center md:justify-start">
+                <img src={handsImage} className="w-10 md:w-14 animated-hand" alt="Animated Hand" />
+              </span>
+            </h1>
+            <p className="font-medium text-slate-500 my-4">
+              Hello! I'm David Ajanaku, a dedicated Software Developer and Technical Writer based in Lagos, Nigeria. 📍
+            </p>
               <span className="flex justify-center md:justify-start">
                 <Link to="http://www.linkedin.com/in/ajanaku-david-45375424b" target="_blank">
                   <svg
