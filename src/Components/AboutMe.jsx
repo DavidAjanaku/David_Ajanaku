@@ -23,32 +23,32 @@ export default function AboutMe() {
               About Me
             </h3>
             <h4 className="font-bold text-3xl md:text-4xl text-gray-800 leading-tight mb-6">
-              A Dedicated Software Developer and Technical Writer
+              A Passionate Software Developer and Technical Writer
               <br />
               <span className="text-green-600">Based in Lagos, Nigeria</span>
             </h4>
             <p className="text-gray-600 leading-relaxed mb-8">
-              As an Experienced Front-End Developer and Technical Writer, I bring a wealth of expertise to the table, akin to a seasoned Software Developer. My journey has spanned the creation, development, and maintenance of immersive web experiences, culminating in a diverse and promising skill set.
+              I am a versatile Software Developer with a keen eye for creating immersive digital experiences and a knack for translating complex technical concepts into engaging and informative content. My work spans the development of dynamic web applications, mobile apps, and e-commerce platforms.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Proficient across various platforms, languages, and cutting-edge development tools, I specialize in crafting exceptional digital solutions. My ability to effectively self-manage during independent projects is complemented by my aptitude for collaborative teamwork.
+              My portfolio highlights include building a feature-rich vacation rental platform, Shortlet, integrating advanced features like Google Maps API for location services. I also crafted the Cosub mobile app, enabling seamless subscription sharing, and developed the Foxwrld e-commerce site, enhancing user interactivity.
             </p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Notable achievements include conquering the complexities of Appwrite technology for MamaPut Hub, highlighting my adaptability and problem-solving prowess. With a track record of delivering outstanding results, I am well-prepared to contribute effectively to your team.
+              I specialize in utilizing modern frameworks such as React, Redux, and Flutter, combined with a strong foundation in backend technologies. My work on the Supernar e-commerce platform showcases my ability to deliver polished and performance-optimized solutions.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="bg-white shadow-md rounded-lg p-4 flex items-center">
                 <span className="text-3xl mr-3">💻</span>
                 <div>
-                  <h5 className="font-semibold text-gray-800">Front-End Development</h5>
-                  <p className="text-sm text-gray-600">Creating immersive web experiences</p>
+                  <h5 className="font-semibold text-gray-800">Full-Stack Development</h5>
+                  <p className="text-sm text-gray-600">Building robust and scalable applications</p>
                 </div>
               </div>
               <div className="bg-white shadow-md rounded-lg p-4 flex items-center">
                 <span className="text-3xl mr-3">✍️</span>
                 <div>
                   <h5 className="font-semibold text-gray-800">Technical Writing</h5>
-                  <p className="text-sm text-gray-600">Documenting complex processes</p>
+                  <p className="text-sm text-gray-600">Conveying complex ideas with clarity</p>
                 </div>
               </div>
             </div>
