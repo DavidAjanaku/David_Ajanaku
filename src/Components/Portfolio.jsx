@@ -19,7 +19,7 @@ export default function Portfolio() {
     },
     {
       title: "Cosub",
-      date: "Sept 2023",
+      date: "Sept 2024",
       emoji: "🎬",
       image: CosubImage,
       description: "Created a Flutter-based mobile app for subscription sharing, offering personalized dashboards and transparent wallet management.",
