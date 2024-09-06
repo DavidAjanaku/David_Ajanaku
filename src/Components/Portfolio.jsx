@@ -13,7 +13,7 @@ export default function Portfolio() {
       date: "April 2024",
       emoji: "🏠",
       image: Shortlet,
-      description: "Developed a comprehensive vacation rental platform using React and Tailwind, featuring property listings, user profiles, and an intuitive booking system.",
+      description: "Engineered a feature-rich vacation rental platform using React, Redux, and Tailwind CSS. Integrated Google Maps API for location services, and implemented a robust booking system with interactive calendars.",
       stack: ["React", "Redux", "Tailwind CSS", "Google Maps API", "Vite"],
       link: "https://shbro.onrender.com/"
     },
