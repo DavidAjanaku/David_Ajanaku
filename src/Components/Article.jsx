@@ -1,4 +1,3 @@
-// Components/Articles.js
 import React from "react";
 
 const articles = [
@@ -11,12 +10,12 @@ const articles = [
     link: "https://blog.openreplay.com/green-web-design--tech-and-sustainability/",
   },
   {
-    title: "The AI Revolution for Developers",
+    title: "Advanced Animation Techniques for Flutter: A Guide",
     excerpt:
-      "In the ever-evolving environment of software development, a subtle yet transformative revolution is taking place one that promises to redefine the role of developers. A field that has rapidly moved from science fiction in the movies to practical reality. AI is no longer a myth or a distant concept, as AI continues to evolve, it is poised to revolutionize the way we develop, test, and maintain software.",
+      "Animations play a crucial role in enhancing the user experience and improving an application's UI's overall look and feel. They help convey changes, transitions, and interactions more engagingly and intuitively. They can make your app feel more responsive, provide visual feedback to user actions, guide users' attention, and create a more polished and professional appearance. This article will show you ways to create great animations in Flutter.",
     imageUrl:
-      "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*iiorGzY10QWwNLZ9hYRVHQ.png",
-    link: "https://medium.com/@davidajanaku46163/the-ai-revolution-for-developers-60b4ecac3537",
+      "https://blog.openreplay.com/images/advanced-animation-techniques-for-flutter--a-guide/images/hero.png",
+    link: "https://blog.openreplay.com/advanced-animation-techniques-for-flutter--a-guide/",
   },
   {
     title: "Mamaput Hub: Appwrite Hashnode Hackathon",
@@ -30,28 +29,42 @@ const articles = [
 
 const Articles = () => {
   return (
-    <div className="flex flex-col items-center my-10" id="article-section">
-      <h2 className="text-3xl font-bold mb-6">Recent Articles</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto px-5 max-w-7xl">
-        {articles.map((article, index) => (
-          <a
-            key={index}
-            href={article.link}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
-          >
-            <img
-              src={article.imageUrl}
-              alt={article.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-bold mb-2">{article.title}</h3>
-              <p className="text-gray-600">{article.excerpt}</p>
-            </div>
-          </a>
-        ))}
+    <section className="bg-gradient-to-b from-gray-50 to-white py-16" id="article-section">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
+          Recent Articles
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {articles.map((article, index) => (
+            <a
+              key={index}
+              href={article.link}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:-translate-y-1"
+            >
+              <div className="relative">
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="absolute inset-0 bg-black opacity-20 transition duration-300 hover:opacity-10"></div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-gray-800 line-clamp-2">
+                  {article.title}
+                </h3>
+                <p className="text-gray-600 text-sm line-clamp-3">{article.excerpt}</p>
+                <div className="mt-4">
+                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-semibold">
+                    Read More
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

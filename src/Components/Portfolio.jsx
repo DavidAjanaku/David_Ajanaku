@@ -3,233 +3,95 @@ import { Link } from "react-router-dom";
 import MamaPutHub from "../assets/mamaput.png";
 import Foxwrld from "../assets/photo2.png";
 import Shortlet from "../assets/photo3.png";
+import CosubImage from "../assets/CosubImage.png";
+import SupernarImage from "../assets/supernar.png"
 
 export default function Portfolio() {
+  const projects = [
+    {
+      title: "Shortlet",
+      date: "April 2024",
+      emoji: "🏠",
+      image: Shortlet,
+      description: "Developed a comprehensive vacation rental platform using React and Tailwind, featuring property listings, user profiles, and an intuitive booking system.",
+      stack: ["React", "Redux", "Tailwind CSS", "Google Maps API", "Vite"],
+      link: "https://shbro.onrender.com/"
+    },
+    {
+      title: "Cosub",
+      date: "Sept 2023",
+      emoji: "🎬",
+      image: CosubImage,
+      description: "Created a Flutter-based mobile app for subscription sharing, offering personalized dashboards and transparent wallet management.",
+      stack: ["Flutter", "Dart"],
+      link: "https://cosub.app/"
+    },
+    {
+      title: "Foxwrld",
+      date: "August 2023",
+      emoji: "👖",
+      image: Foxwrld,
+      description: "Crafted an immersive clothing e-commerce website using React and Tailwind, enhancing user experience and interactivity.",
+      stack: ["React", "Tailwind CSS"],
+      link: "https://foxwrld.com/"
+    },
+    {
+      title: "Shop Supernar",
+      date: "2024", // You may want to update this with the actual date
+      emoji: "💪",
+      image: SupernarImage,
+      description: "Developed a WordPress-based e-commerce platform for Supernar, showcasing top-tier fitness wear and accessories. The site features a curated selection of products designed to enhance performance and style.",
+      stack: ["WordPress", "WooCommerce", "PHP"],
+      link: "https://shop.supernar.com/"
+    },
+  ];
+
   return (
-    <div className="bg-slate-100" id="portfolio-section">
-      <div className="flex justify-center my-28 p-4 md:w-3/4 md:mx-auto">
-        <div className="project-content">
-          <div className="my-4">
-            <h3 className="text-green-500 font-bold text-lg md:text-xl uppercase mb-2">
-              portfolio
-            </h3>
-            <h4 className="font-bold text-2xl md:text-2xl my-4">
-              Each project showcased here is a distinctive achievement in my
-              portfolio, contributing to the diverse tapestry of my web
-              development journey. 🧩{" "}
-            </h4>
-          </div>
-          <div className="project-grid grid grid-cols-1 gap-7">
-            <div className="about-content md:grid md:grid-cols-1 gap-10 shadow-lg bg-white p-7 lg:grid-cols-2 justify-center">
-              <div className="pro-img">
-                <img
-                  src={MamaPutHub}
-                  alt=""
-                  className="w-full h-full object-cover rounded-md"
-                />
-              </div>
-              <div className="pro-text">
-                <h3 className="font-bold text-2xl text-gray-600">
-                  MamaPut Hub <span className="">(May 2023)</span> 🥘
-                </h3>
-                <p className="my-5 text-slate-500">
-                  At MamaPutHub in Nigeria, I served as a Software Developer
-                  from April 2023 to May 2023. I led the development of a
-                  food-sharing platform using React, Tailwind CSS, and Appwrite
-                  for the backend, with GitHub and Vercel for version control
-                  and deployment. My primary focus was to empower users by
-                  enabling them to easily post and save food recipes. This
-                  project showcased my proficiency in modern web technologies
-                  and my commitment to creating a user-friendly platform for
-                  culinary enthusiasts.
-                </p>
-                <div className="stack flex flex-wrap gap-3 my-2">
-                  <p className="bg-white shadow-md px-4 py-2">React</p>
-                  <p className="bg-white shadow-md px-4 py-2">Appwrite</p>
-
-                  <p className="bg-white shadow-md px-4 py-2">Tailwind CSS</p>
+    <section className="bg-gradient-to-b from-slate-50 to-slate-100 py-20" id="portfolio-section">
+      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="text-center mb-16">
+          <h3 className="text-green-600 font-bold text-lg md:text-xl uppercase mb-3">
+            Portfolio
+          </h3>
+          <h4 className="font-bold text-3xl md:text-4xl text-gray-800 leading-tight">
+            Software Development Showcase 🧩
+          </h4>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h2 className="text-xl font-bold text-gray-800">
+                    {project.title} <span className="text-2xl ml-1">{project.emoji}</span>
+                  </h2>
+                  <span className="text-sm text-green-600 font-semibold">{project.date}</span>
                 </div>
-                <div className="links flex gap-5 my-5">
-                  {/* <Link className="flex">
-                    Code{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-brand-github"
-                    >
-                      <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-                    </svg>
-                  </Link> */}
-                  <Link to="https://mama-put-hub.vercel.app/" target="_blank" className="flex">
-                    Live Demo
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-external-link"
-                    >
-                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
-                      <path d="M11 13l9 -9"></path>
-                      <path d="M15 4h5v5"></path>
-                    </svg>
-                  </Link>
+                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.stack.map((tech, techIndex) => (
+                    <span key={techIndex} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+                <Link 
+                  to={project.link} 
+                  target="_blank" 
+                  className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
+                >
+                  View Project
+                  <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </Link>
               </div>
             </div>
-
-            <div className="about-content md:grid md:grid-cols-1 gap-10 shadow-lg bg-white p-7 lg:grid-cols-2 justify-center">
-              <div className="pro-img">
-                <img src={Foxwrld} alt="" 
-                 className="w-full h-full object-cover rounded-md"/>
-              </div>
-              <div className="pro-text">
-                <h3 className="font-bold text-2xl text-gray-600">
-                  Foxwrld <span className="">(August 2023)</span> 👖
-                </h3>
-                <p className="my-5 text-slate-500">
-                  At Foxwrld in Nigeria, I served as a Frontend Developer during
-                  July 2023 to August 2023. I took charge of crafting an
-                  immersive clothing e-commerce website utilizing React and
-                  Tailwind. My role involved close collaboration with backend
-                  developers to ensure seamless integration, resulting in
-                  enhanced website interactivity. This project allowed me to
-                  apply my expertise in frontend development to create a
-                  visually appealing and user-friendly online shopping
-                  experience, contributing to the success of the Foxwrld
-                  clothing e-commerce platform.
-                </p>
-                <div className="stack flex gap-3 my-2">
-                  <p className="bg-white shadow-md px-4 py-2">React</p>
-
-                  <p className="bg-white shadow-md px-4 py-2">Tailwind CSS</p>
-                </div>
-                <div className="links flex gap-5 my-5">
-                  {/* <Link className="flex">
-                    Code{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-brand-github"
-                    >
-                      <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-                    </svg>
-                  </Link> */}
-                  <Link to="https://foxwrld.com/" target="_blank" className="flex">
-                    Live Demo
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-external-link"
-                    >
-                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
-                      <path d="M11 13l9 -9"></path>
-                      <path d="M15 4h5v5"></path>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="about-content md:grid md:grid-cols-1 gap-10 shadow-lg bg-white p-7 lg:grid-cols-2 justify-center">
-              <div className="pro-img">
-                <img src={Shortlet} alt=""
-                             className="w-full h-full object-cover rounded-md"/>
-              </div>
-              <div className="pro-text">
-                <h3 className="font-bold text-2xl text-gray-600">
-                  Shortlet <span className="">(October 2023)</span> 👖
-                </h3>
-                <p className="my-5 text-slate-500">
-                  As a Frontend Developer at Shortlet Bookings from October 2023
-                  to November 2023, I contributed to the development of a
-                  comprehensive vacation rental platform using React and
-                  Tailwind. Shortlet Bookings offers a versatile array of
-                  features, enabling hosts to effortlessly list and manage their
-                  properties while providing guests with an intuitive booking
-                  system. The platform supports user profiles, a secure
-                  messaging system, and a robust review and rating system,
-                  fostering trust and community engagement. With advanced search
-                  capabilities, users can easily find short-term apartment
-                  rentals tailored to their preferences, making Shortlet
-                  Bookings a user-friendly and visually appealing destination
-                  for individuals exploring vacation rental options.
-                </p>
-
-                <div className="stack flex gap-3 my-2">
-                  <p className="bg-white shadow-md px-4 py-2">React</p>
-
-                  <p className="bg-white shadow-md px-4 py-2">Tailwind CSS</p>
-                </div>
-                <div className="links flex gap-5 my-5">
-                  {/* <Link className="flex">
-                    Code{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-brand-github"
-                    >
-                      <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-                    </svg>
-                  </Link> */}
-                  <Link to="https://shbro.onrender.com/" target="_blank" className="flex">
-                    Live Demo
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="tabler-icon tabler-icon-external-link"
-                    >
-                      <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"></path>
-                      <path d="M11 13l9 -9"></path>
-                      <path d="M15 4h5v5"></path>
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
