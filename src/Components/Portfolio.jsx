@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import MamaPutHub from "../assets/mamaput.png";
+import MamaPutHub from "../assets/mamaputhub.png";
 import Foxwrld from "../assets/photo2.png";
 import Shortlet from "../assets/photo3.png";
 import CosubImage from "../assets/CosubImage.png";
@@ -27,13 +27,13 @@ export default function Portfolio() {
       link: "https://cosub.app/"
     },
     {
-      title: "Foxwrld",
+      title: "MamaPutHub",
       date: "August 2023",
-      emoji: "👖",
-      image: Foxwrld,
-      description: "Crafted an immersive clothing e-commerce website using React and Tailwind, enhancing user experience and interactivity.",
-      stack: ["React", "Tailwind CSS"],
-      link: "https://foxwrld.com/"
+      emoji: "🍱",
+      image: MamaPutHub,
+      description: "The app allows users to create, share, and save recipes",
+      stack: ["React", "Tailwind CSS", "Appwrite"],
+      link: "https://mama-put-hub-phi.vercel.app"
     },
     {
       title: "Shop Supernar",
@@ -82,7 +82,7 @@ export default function Portfolio() {
                   target="_blank" 
                   className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200"
                 >
-                  View Project
+                  View Site
                   <svg xmlns="http://www.w3.org/2000/svg" className="ml-1.5 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
