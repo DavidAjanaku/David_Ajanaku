@@ -1,75 +1,73 @@
-import React from "react";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import React, { useState, useEffect } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 
-export default function Header() {
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  
+  const menuItems = [
+    { name: 'Home', sectionId: 'home-section' },
+    { name: 'About', sectionId: 'about-section' },
+    { name: 'Article', sectionId: 'article-section' },
+    { name: 'Projects', sectionId: 'projects-section' },
+    { name: 'Contact', sectionId: 'contact-section' }
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
     <div className="hidden md:block">
-      <nav className="flex items-center justify-between p-8 shadow-lg fixed bg-white z-10 left-0 right-0 top-0">
-        <h3 className="logo font-bold text-2xl text-slate-600" onClick={scrollToTop}>
-          David.dev
-        </h3>
-        <ul className="space-x-5 flex items-center text-slate-600">
-          <li className="cursor-pointer">
-            <ScrollLink
-              to="hero-section"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+      <nav 
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          scrolled 
+            ? 'bg-gray-900/80 backdrop-blur-lg border-b border-gray-800'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between py-4">
+            <h3
+              onClick={scrollToTop}
+              className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text cursor-pointer hover:scale-105 transition-transform"
             >
-              Home
-            </ScrollLink>
-          </li>
-          <li className="cursor-pointer">
-            <ScrollLink
-              to="about-me-section"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              About
-            </ScrollLink>
-          </li>
-          <li className="cursor-pointer">
-            <ScrollLink
-              to="article-section"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Article
-            </ScrollLink>
-          </li>
-          <li className="cursor-pointer">
-            <ScrollLink
-              to="portfolio-section"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Projects
-            </ScrollLink>
-          </li>
-          <li className="cursor-pointer">
-            <ScrollLink
-              to="contact-section"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              Contact
-            </ScrollLink>
-          </li>
-        </ul>
+              David.dev
+            </h3>
+            
+            <ul className="flex space-x-8">
+              {menuItems.map((item) => (
+                <li key={item.name}>
+                  <ScrollLink
+                    to={item.sectionId}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    activeClass="text-white"
+                    className="text-gray-400 hover:text-white transition-colors relative group cursor-pointer"
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all group-hover:w-full" />
+                  </ScrollLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   );
-}
+};
+
+export default Header;
